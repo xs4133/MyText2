@@ -1,0 +1,394 @@
+body {
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 1300px;
+    height: 60px;
+
+    background-color: white;
+    border-bottom: 2px solid #dcdcdc;
+
+    display: flex;
+    align-items: center;
+
+    /*header定位设置为relative时，会随滚动条移动，所以设置为fixed*/
+    position: fixed;
+
+    /*设置fixed定位后要设置相应位置信息，如top，否则位置会随其它元素变化*/
+    top: 0px;
+
+    z-index: 1;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+
+    margin: 16px;
+}
+
+.menu a {
+    margin: 10px;
+
+    color: #a3a3a3;
+    text-decoration: none;
+}
+
+.search-input1 {
+    padding: 6px;
+    border: 1px solid #65b1ca;
+    background-color: #e9f0f3;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.search-input2 {
+    width: 35px;
+    height: 29px;
+    background-color: #2b25ff;
+
+    background-image: url("../images/search.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 58% 67%;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;;
+
+    cursor: pointer;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.btnwen {
+    width: 50px;
+    height: 30px;
+    background-color: #7681ff;
+
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    line-height: 28px;
+
+    margin-left: 15px;
+    margin-right: 15px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+.userinfo {
+    margin-left: 16px;
+}
+
+.userquit {
+    color: #a3a3a3;
+    text-decoration: none;
+    margin-left: 20px;
+
+    font-size: 15px;
+}
+
+.main {
+    position: relative;
+    top: 69px;
+
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.cover {
+    background-color: white;
+    border: 1px solid #f0f0f0;
+}
+
+.usercover {
+    height: 240px;
+    background-image: url("../images/usercover.jpg");
+    background-size: 100%;
+}
+
+.editusercover {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    padding: 8px;
+    color: white;
+    border: 1px solid white;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+}
+
+.personalinfo {
+    height: 180px;
+    position: relative;
+    margin-top: 0;
+
+    background-color: white;
+    border: 1px solid #e8e8e8;
+}
+
+.photo {
+    width: 180px;
+    height: 180px;
+    background-image: url("../images/userinfo.jpg");
+
+    position: absolute;
+    top: -30px;
+    left: 30px;
+
+    border-radius: 5px;
+    border: 3px solid #e2e2e2;
+
+    background-size: 100%;
+}
+
+.intruduce {
+    position: absolute;
+    left: 250px;
+}
+
+.intrspan {
+    font-size: 18px;
+}
+
+.editinfo {
+    position: absolute;
+    bottom: 27px;
+    right: 30px;
+    border: 1px solid #5750ff;
+    color: #5750ff;
+    padding: 6px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.view {
+    font-size: 14px;
+    cursor: pointer;
+    color: #8d8d8d;
+}
+
+.column {
+    height: 130px;
+    background-color: white;
+    border: 1px solid #e8e8e8;
+
+    margin-top: 10px;
+}
+
+.tabs li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+    padding: 6px;
+
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 2px solid #393bff;
+}
+
+.dongtai {
+    margin: 20px;
+}
+
+/*------提问弹出框 样式------*/
+
+.Modal-wrapper {
+    display: none; /* 页面加载时不显示，通过js控制显示和关闭 */
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    z-index: 2;
+}
+
+.Modal-backdrop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 0.5;
+
+    z-index: 3;
+}
+
+.Modal-large {
+    width: 520px;
+    height: 500px;
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+
+    background-color: white;
+
+    z-index: 4;
+}
+
+.Modal-inner{
+    overflow: auto;
+    background: #fff;
+    border-radius: 2px;
+}
+
+.Modal-inner h3 {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: #262626;
+    text-align: center;
+}
+
+.Modal-subtitle {
+    padding: 0 38px;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #8590a6;
+    text-align: center;
+}
+
+.Modal-content {
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0 24px 32px;
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 1;
+}
+
+.askquestion {
+
+}
+
+.QuestionAsk-section {
+    margin-bottom: 12px;
+}
+
+.asktitle {
+    width: 100%;
+    font-size: 15px;
+    background: #fff;
+    border: 1px solid #e7eaf1;
+    border-radius: 3px;
+    box-sizing: border-box;
+    transition: background .2s, border .2s;
+    display: flex;
+    padding: 6px 12px;
+}
+
+.asktitle span {
+    padding-top: 5px;
+    color: #AFBDCF;
+}
+
+.Input {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    line-height: 26px;
+}
+
+.askhead {
+    align-items: center;
+    padding-left: 12px;
+    margin-bottom: 8px;
+    color: #404040;
+}
+
+.chec {
+    color: #8590a6;
+    cursor: pointer;
+}
+
+.tijiao {
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+.tijiaobtn {
+    display: block;
+    width: 220px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #0f88eb;
+    color: #fff;
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 34px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccd8e1;
+    border-radius: 3px;
+}
+
+.guanbi{
+    position: absolute;
+    top: 8px;
+    right: -60px;
+    padding: 0px 18px 5px 8px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
